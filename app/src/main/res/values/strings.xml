@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Calendario</string>
+    <string name="titulo">Mi Toolbar</string>
+
 </resources>

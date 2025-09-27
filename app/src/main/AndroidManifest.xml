@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Calendario">
+
         <activity
             android:name=".DetalleFeriados"
             android:exported="false" />
@@ -24,6 +25,9 @@
         <activity
             android:name=".ListaMeses"
             android:exported="false" />
+
+        <activity android:name=".TerminosActivity" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
