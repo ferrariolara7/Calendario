@@ -13,11 +13,10 @@ import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var email: EditText
-    lateinit var password: EditText
-    lateinit var btnLogin: Button
-    lateinit var tvRegister: TextView
-
+    private lateinit var email: EditText
+    private lateinit var password: EditText
+    private lateinit var btnLogin: Button
+    private lateinit var tvRegister: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,12 +34,21 @@ class MainActivity : AppCompatActivity() {
         email = findViewById(R.id.email)
         password = findViewById(R.id.password)
         btnLogin = findViewById(R.id.btnLogIn)
-        tvRegister = findViewById<TextView>(R.id.tvRegister)
-
+        tvRegister = findViewById(R.id.tvRegister)
 
         // Acción botón login
         btnLogin.setOnClickListener {
-            Toast.makeText(this, "Ingrese los datos solicitados", Toast.LENGTH_SHORT).show()
+            val userEmail = email.text.toString()
+            val userPassword = password.text.toString()
+
+            if (userEmail.isNotEmpty() && userPassword.isNotEmpty()) {
+                val intentLista = Intent(this, ListaMeses::class.java)
+                intentLista.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intentLista)
+                finish() // <- evita volver al login
+            } else {
+                Toast.makeText(this, "Por favor, ingrese email y contraseña.", Toast.LENGTH_SHORT).show()
+            }
         }
 
         // Acción texto registrarse
@@ -48,7 +56,5 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
-
-
     }
 }

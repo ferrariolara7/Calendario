@@ -1,5 +1,6 @@
 package com.example.calendario
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -31,7 +32,22 @@ class RegisterActivity : AppCompatActivity() {
             if (emailText.isEmpty() || passwordText.isEmpty()) {
                 Toast.makeText(this, "Ingrese los datos solicitados", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
+
+                // 1. Crear el Intent para ir a la lista
+                val intentLista = Intent(this, ListaMeses::class.java)
+
+                // 2. Opcional pero recomendado: Limpiar la pila de actividades
+                intentLista.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+
+                // 3. ¡INICIAR LA ACTIVIDAD!
+                startActivity(intentLista)
+
+                // 4. ¡CERRAR LA ACTIVIDAD DE REGISTRO!
+                // Esto evita que el usuario regrese a la pantalla de registro con el botón 'Atrás'.
+                finish()
+
+                // Opcional: Mostrar un Toast de éxito
+                Toast.makeText(this, "Registro Exitoso", Toast.LENGTH_SHORT).show()
             }
         }
     }

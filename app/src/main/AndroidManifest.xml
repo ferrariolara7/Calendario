@@ -12,10 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Calendario">
         <activity
+            android:name=".DetalleFeriados"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".logIn"
+            android:exported="false" />
+
+        <activity
+            android:name=".ListaMeses"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
