@@ -9,6 +9,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
+import com.example.calendario.model.AppDatabase
+import com.example.calendario.model.usuario
+import kotlinx.coroutines.launch
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -32,22 +36,26 @@ class RegisterActivity : AppCompatActivity() {
             if (emailText.isEmpty() || passwordText.isEmpty()) {
                 Toast.makeText(this, "Ingrese los datos solicitados", Toast.LENGTH_SHORT).show()
             } else {
+                // Guardar en la base de datos
+                val db = AppDatabase.getDatabase(this)
+                val usuarioDao = db.usuarioDao()
 
-                // 1. Crear el Intent para ir a la lista
-                val intentLista = Intent(this, ListaMeses::class.java)
+                lifecycleScope.launch {
+                    // Crear el usuario
+                    val nuevoUsuario = usuario(nombre = emailText, email = emailText, contrasena = passwordText)
+                    usuarioDao.insert(nuevoUsuario)
 
-                // 2. Opcional pero recomendado: Limpiar la pila de actividades
-                intentLista.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                    // Luego de guardar, ir a la siguiente pantalla
+                    val intentLista = Intent(this@RegisterActivity, ListaMeses::class.java)
+                    intentLista.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(intentLista)
+                    finish()
+                }
 
-                // 3. ¡INICIAR LA ACTIVIDAD!
-                startActivity(intentLista)
-
-                // 4. ¡CERRAR LA ACTIVIDAD DE REGISTRO!
-                // Esto evita que el usuario regrese a la pantalla de registro con el botón 'Atrás'.
-                finish()
-
-                // Opcional: Mostrar un Toast de éxito
-                Toast.makeText(this, "Registro Exitoso", Toast.LENGTH_SHORT).show()
+                // Opcional: Toast dentro de la coroutine
+                lifecycleScope.launch {
+                    Toast.makeText(this@RegisterActivity, "Registro Exitoso", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
