@@ -10,7 +10,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-
+import androidx.lifecycle.lifecycleScope
+import com.example.calendario.model.AppDatabase
+import com.example.calendario.model.usuario
+import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
 
     private lateinit var email: EditText
@@ -38,16 +41,28 @@ class MainActivity : AppCompatActivity() {
 
         // Acción botón login
         btnLogin.setOnClickListener {
-            val userEmail = email.text.toString()
-            val userPassword = password.text.toString()
+            val userEmail = email.text.toString().trim()
+            val userPassword = password.text.toString().trim()
 
-            if (userEmail.isNotEmpty() && userPassword.isNotEmpty()) {
-                val intentLista = Intent(this, ListaMeses::class.java)
-                intentLista.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-                startActivity(intentLista)
-                finish() // <- evita volver al login
-            } else {
+            if (userEmail.isEmpty() || userPassword.isEmpty()) {
                 Toast.makeText(this, "Por favor, ingrese email y contraseña.", Toast.LENGTH_SHORT).show()
+            } else {
+                val db = AppDatabase.getDatabase(this)
+                val usuarioDao = db.usuarioDao()
+
+                lifecycleScope.launch {
+                    val usuario = usuarioDao.login(userEmail, userPassword)
+                    if (usuario != null) {
+                        // Login exitoso
+                        val intentLista = Intent(this@MainActivity, ListaMeses::class.java)
+                        intentLista.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                        startActivity(intentLista)
+                        finish()
+                    } else {
+                        // Usuario no encontrado o contraseña incorrecta
+                        Toast.makeText(this@MainActivity, "Email o contraseña incorrectos", Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
         }
 

@@ -19,6 +19,8 @@ lateinit var toolbar: Toolbar
 class ListaMeses : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        val NAV_ICON_RES_ID = R.drawable.ic_icono_menu // <-- ASUME ESTE NOMBRE
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_meses)
 
@@ -41,6 +43,9 @@ class ListaMeses : AppCompatActivity() {
         supportActionBar!!.title = resources.getString(R.string.titulo)
 
         supportActionBar?.title = "Menú"
+
+        toolbar.setNavigationIcon(NAV_ICON_RES_ID)
+
 
         val btnLogin = findViewById<Button>(R.id.btnLogin)
         val btnTerminos = findViewById<Button>(R.id.btnTerminos)
