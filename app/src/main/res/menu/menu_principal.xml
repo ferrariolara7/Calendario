@@ -12,4 +12,11 @@
         android:title="Terminos y Condiciones"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/action_logout"
+        android:title="Cerrar sesión"
+        android:orderInCategory="3"
+        app:showAsAction="never" />
+
+
 </menu>

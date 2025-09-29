@@ -60,6 +60,16 @@
             android:text="Iniciar Sesión"
             android:layout_marginTop="30dp"/>
 
+        <!-- Check de recordar usuario -->
+        <CheckBox
+            android:id="@+id/chkRememberUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recordar usuario"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center_horizontal"/>
+
+
         <!-- Texto de registro -->
         <TextView
             android:id="@+id/tvRegister"

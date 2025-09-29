@@ -1,5 +1,6 @@
 package com.example.calendario
 
+import android.content.Context
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -65,8 +66,9 @@ class ListaMeses : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_principal, menu)
-        return super.onCreateOptionsMenu(menu)
+        return true
     }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -80,8 +82,21 @@ class ListaMeses : AppCompatActivity() {
                 startActivity(intent)
                 return true
             }
+            R.id.action_logout -> {
+                val sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
+                val editor = sharedPreferences.edit()
+                editor.putBoolean("isLoggedIn", false) // cerrar sesión
+                editor.apply()
+
+                // Volver al login
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
     }
+
 
 }
