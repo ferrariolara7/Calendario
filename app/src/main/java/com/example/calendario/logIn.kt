@@ -43,6 +43,9 @@ class logIn : AppCompatActivity() {
 
         sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
 
+        // Mantener el checkbox marcado si ya estaba guardado
+        chkRememberUser.isChecked = sharedPreferences.getBoolean("isLoggedIn", false)
+
         // Si el usuario ya está logueado, ir directo a la pantalla principal
         val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
         if (isLoggedIn) {
@@ -72,7 +75,8 @@ class logIn : AppCompatActivity() {
                             editor.putBoolean("isLoggedIn", true)
                             editor.putString("userEmail", userEmail)
                         } else {
-                            editor.clear()
+                            editor.putBoolean("isLoggedIn", false)
+                            editor.remove("userEmail")
                         }
                         editor.apply()
 
