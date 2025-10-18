@@ -53,4 +53,15 @@ dependencies {
     implementation("androidx.room:room-runtime:$room_version")
     implementation("androidx.room:room-ktx:$room_version")
     kapt("androidx.room:room-compiler:$room_version")
+
+    //Retrofit y Gson (para llamadas HTTP y parseo JSON)
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+// OkHttp logging (para ver las requests/responses en Logcat)
+    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+
+//Coroutines (para llamadas asíncronas sin bloquear el hilo principal)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0")
+
 }

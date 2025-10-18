@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,7 +13,9 @@
         android:roundIcon="@mipmap/ic_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Calendario">
-
+        <activity
+            android:name=".ApiTestActivity"
+            android:exported="false" />
         <activity
             android:name=".DetalleFeriados"
             android:exported="false" />
@@ -21,13 +25,10 @@
         <activity
             android:name=".logIn"
             android:exported="false" />
-
         <activity
             android:name=".ListaMeses"
             android:exported="false" />
-
         <activity android:name=".TerminosActivity" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true">

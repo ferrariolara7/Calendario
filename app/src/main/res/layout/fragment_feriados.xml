@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_mes_feriados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Feriados del mes"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tv_feriados_detalle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cargando feriados..."
+            android:textSize="16sp" />
+    </LinearLayout>
+</ScrollView>
