@@ -6,14 +6,12 @@ Proyecto de la materia **Seminario de Aplicaciones Móviles (UNLa)**
 
 ## 📖 Descripción
 Esta aplicación permite **iniciar sesión y/o registrarse**.  
-Además, muestra una lista de meses con sus respectivos feriados, los cuales se dividen en:
-- 🇦🇷 **Feriados Nacionales**
-- 🗓️ **Días no laborables**
+Además, muestra una lista de meses con sus respectivos feriados.
 
 ---
 
 ## 🚀 API elegida
-https://www.abstractapi.com/api/holidays-api  Public Holidays
+https://date.nager.at/  Public Holidays
 
 ---
 
