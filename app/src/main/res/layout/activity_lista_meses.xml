@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".ListaMeses">
+
+     <!-- Imagen de fondo -->
+     <ImageView
+         android:id="@+id/img_fondo"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:src="@drawable/fondo"
+         android:scaleType="centerCrop"
+         android:alpha="0.4" /> <!-- Ajusta el alpha para que los textos se vean -->
+
+     <!-- Contenido encima de la imagen -->
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:orientation="vertical">
 
      <include android:id="@+id/toolbar"
          layout="@layout/primary_toolbar"/>
@@ -30,4 +44,5 @@
          android:text="Términos y condiciones" />
 
 
-</LinearLayout>
+     </LinearLayout>
+</FrameLayout>

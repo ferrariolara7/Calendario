@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textoTerminos"
+    <!-- Imagen de fondo -->
+    <ImageView
+        android:id="@+id/img_fondo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Aquí irán los términos y condiciones de uso..."
-        android:textSize="16sp"
-        android:lineSpacingExtra="4dp" />
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo" />
 
-</ScrollView>
+    <!-- Contenido encima de la imagen -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textoTerminos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:lineSpacingExtra="4dp"
+            android:text="@string/terminos_condiciones" />
+
+    </ScrollView>
+</FrameLayout>
+

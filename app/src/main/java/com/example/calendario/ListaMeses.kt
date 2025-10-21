@@ -29,7 +29,7 @@ class ListaMeses : AppCompatActivity() {
 
         recyclerViewMeses.layoutManager = LinearLayoutManager(this)
         MesesAdapter(listaDeMeses) { mesSeleccionado ->
-            // 👉 Cuando el usuario toca un mes, abrimos la pantalla de detalle
+            // Cuando el usuario toca un mes, abrimos la pantalla de detalle
             val intent = Intent(this, DetalleFeriados::class.java)
             intent.putExtra("MES_SELECCIONADO", mesSeleccionado)
             startActivity(intent)

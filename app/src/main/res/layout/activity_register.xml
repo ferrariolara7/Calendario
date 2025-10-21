@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".RegisterActivity">
+
+    <!-- Imagen de fondo -->
+    <ImageView
+        android:id="@+id/img_fondo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/fondo"
+        android:scaleType="centerCrop"
+        android:alpha="0.4" />
+
     <!-- Contenido principal -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,7 +39,7 @@
             android:text="Comencemos a crear una cuenta para vos!"
             android:textSize="16sp"
             android:layout_marginTop="16dp"
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="10dp"
             android:layout_gravity="center"/>
 
         <!-- Campo correo -->
@@ -40,7 +50,7 @@
             android:hint="Email"
             android:layout_marginTop="20dp"
             android:inputType="textEmailAddress"
-            android:textSize="15sp"/>
+            android:textSize="17sp"/>
 
         <!-- Campo contraseña -->
         <EditText
@@ -50,7 +60,7 @@
             android:hint="Password"
             android:layout_marginTop="16dp"
             android:inputType="textPassword"
-            android:textSize="15sp"/>
+            android:textSize="17sp"/>
 
         <!-- Campo confirmar contraseña -->
         <EditText
@@ -60,7 +70,7 @@
             android:hint="Confirmar Password"
             android:layout_marginTop="16dp"
             android:inputType="textPassword"
-            android:textSize="15sp"/>
+            android:textSize="17sp"/>
 
         <!-- Botón registrarse -->
         <Button
@@ -68,9 +78,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Registrarme"
-            android:layout_marginTop="30dp"/>
+            app:backgroundTint="@color/celeste_intenso"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="30dp"
+            android:textSize="17sp"/>
 
     </LinearLayout>
-
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</FrameLayout>

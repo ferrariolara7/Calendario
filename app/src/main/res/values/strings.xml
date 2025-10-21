@@ -4,4 +4,44 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="terminos_condiciones">
+CalendarioAR - Términos y Condiciones de Uso
+
+Fecha de última actualización: 20 de octubre de 2025
+
+Bienvenido/a a CalendarioAR, una aplicación móvil que permite consultar los feriados nacionales de la República Argentina. Al utilizar esta aplicación, usted acepta los siguientes términos y condiciones. Le recomendamos leerlos atentamente antes de continuar.
+
+1. Aceptación de los términos
+El acceso y uso de CalendarioAR implican la aceptación plena de estos Términos y Condiciones. Si no está de acuerdo con alguno de los puntos aquí establecidos, deberá abstenerse de utilizar la aplicación.
+
+2. Descripción del servicio
+CalendarioAR ofrece información sobre feriados nacionales obtenida de fuentes públicas mediante una API externa. La aplicación no garantiza la disponibilidad constante del servicio ni la exactitud total de los datos proporcionados.
+
+3. Uso permitido
+El usuario se compromete a utilizar la aplicación únicamente para fines personales y no comerciales. Queda prohibido modificar, copiar o distribuir el contenido sin autorización previa.
+
+4. Fuentes de información
+Los datos mostrados provienen de la API pública "Nager.Date" (https://date.nager.at). CalendarioAR no es responsable por errores, omisiones o demoras en la información proporcionada por dicha fuente.
+
+5. Privacidad y datos personales
+La aplicación no recopila ni almacena datos personales del usuario. No se solicitan credenciales, ubicaciones ni permisos especiales.
+
+6. Responsabilidad
+CalendarioAR no se hace responsable de daños o perjuicios derivados del uso o imposibilidad de uso de la aplicación, incluyendo interrupciones del servicio o errores en los datos mostrados.
+
+7. Propiedad intelectual
+Todos los derechos sobre el diseño, nombre, logotipo y contenido de la aplicación pertenecen a sus respectivos autores. Se prohíbe su uso no autorizado.
+
+8. Modificaciones de los términos
+Los Términos y Condiciones pueden ser modificados en cualquier momento. Las nuevas versiones se publicarán en la aplicación y entrarán en vigencia inmediatamente.
+
+9. Contacto
+Ante dudas o sugerencias, puede contactarse con el equipo de desarrollo a través del correo: soporte@calendarioar.com
+
+Gracias por utilizar CalendarioAR. Nuestro objetivo es brindarle una herramienta simple y confiable para conocer los feriados en Argentina.
+
+© 2025 CalendarioAR. Todos los derechos reservados.
+</string>
+
+
 </resources>
